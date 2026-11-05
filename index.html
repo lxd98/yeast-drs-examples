@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Yeast interactive gene index</title><link rel="stylesheet" href="style.css"></head>
+<body><header><div class="eyebrow">YEAST DRS - EXAMPLE COLLECTION</div><h1>Example gene browser</h1><p>50 example genes. Choose a label to open its interactive read view.</p><div id="inventory" class="inventory"></div></header>
+<main><section class="filters" aria-label="Filter genes">
+<label class="search">Find a gene<input id="search" type="search" placeholder="Gene name or ID" autocomplete="off"></label>
+<label>Overlap status<select id="overlap"><option value="all">All available</option><option value="non_overlapping">Non-overlapping</option><option value="overlapping">Overlapping</option></select></label>
+<label>Exon group<select id="exons"><option value="all">All available</option><option value="1">Mono-exon</option><option value="2">Two-exon</option><option value="3plus">Three or more exons</option></select></label>
+<label>Chromosome<select id="chrom"><option value="all">All chromosomes</option></select></label>
+<label>Strand<select id="strand"><option value="all">Both strands</option><option value="+">+ strand</option><option value="-">- strand</option></select></label>
+<label>Minimum reads<input id="minReads" type="number" min="0" step="1" value="0"></label>
+<button id="reset" type="button">Reset filters</button></section>
+<div class="toolbar"><div id="resultCount" role="status" aria-live="polite"></div><div class="displayControls"><label>Sort<select id="sort"><option value="name">Gene name</option><option value="id">Gene ID</option><option value="reads">Most reads first</option></select></label><label>Per page<select id="pageSize"><option value="60">60</option><option value="120">120</option><option value="240">240</option></select></label></div></div>
+<div id="empty" hidden>No genes match these filters. Try another gene name or reset the filters.</div>
+<div id="geneGroups"></div>
+<nav class="pagination" aria-label="Gene index pages"><button id="previous">← Previous</button><span id="pageInfo"></span><button id="next">Next →</button></nav>
+<details class="notes"><summary>About this example collection</summary><p>This collection contains 50 non-overlapping mono-exon genes for demonstrating the interactive browser. It is a selected demonstration, not the complete benchmark or a representative biological sample.</p><p>Read group labels describe alignment patterns, not confirmed isoforms. Gene links open in a new tab.</p><p><a href="README.txt">Viewer methods and file information</a></p></details>
+</main><footer>Local gene index - No plots are loaded on this page.</footer><script src="catalog.js"></script><script src="index.js"></script></body></html>
